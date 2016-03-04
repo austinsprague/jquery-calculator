@@ -20,7 +20,7 @@ $(document).ready(function($) {
       }
     });
 
-    $('.operator').not('#calc').click(function(event){
+    $('.operator').not('#calc, #cancel').click(function(event){
       var $this = $(this);
       var content = $this.text();
       operator = content;
@@ -47,9 +47,12 @@ $(document).ready(function($) {
         $screen.text(result);
       }
     });
-
-
-
-
-});
+    $('#cancel').click(function(event){
+      operator = null;
+      left = 0;
+      right = 0;
+      result = 0;
+      $screen.text(result);
+    })
+  });
 })();
